@@ -596,6 +596,22 @@ label.menu-toggle { display: none; }
   .bar-row { grid-template-columns: 100px 1fr 52px; }
 }
 .arch { overflow: hidden; }
+
+.status-active { background: var(--copper-soft); color: var(--copper-dark); }
+.more { margin-top: 40px; }
+.more-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.more-head h3 { font-size: 22px; }
+.more-note { font-size: 14px; color: var(--stone-600); max-width: 420px; line-height: 1.45; }
+.more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.more-item {
+  background: var(--cream); border: 1px solid var(--stone-200);
+  border-radius: 12px; padding: 16px 18px; min-width: 0;
+}
+.more-item h4 { font-size: 18px; margin: 8px 0 6px; }
+.more-item p { font-size: 14.5px; color: var(--stone-600); line-height: 1.45; }
+@media (max-width: 700px) {
+  .more-grid { grid-template-columns: 1fr; }
+}
 </style>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
@@ -813,8 +829,8 @@ label.menu-toggle { display: none; }
       </ul>
     </div>
     <div class="case-block">
-      <h2>Other planned work, kept separate</h2>
-      <p>FieldSense is a planned off-grid prototype for plant imaging and plant-health guidance, and a Presidential AI Challenge entry for 2026 to 27. It is in progress, not an operational product, and it is not a 90-day adoption deliverable.</p>
+      <h2>Other applied builds, kept separate</h2>
+      <p>FieldSense, the AI sorter, and Bandit are applied edge and robotics builds. They are listed on the homepage under More builds. They are not 90-day adoption deliverables, and they are not treated as measured results in this plan.</p>
     </div>
   </div>
 </section>

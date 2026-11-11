@@ -596,6 +596,22 @@ label.menu-toggle { display: none; }
   .bar-row { grid-template-columns: 100px 1fr 52px; }
 }
 .arch { overflow: hidden; }
+
+.status-active { background: var(--copper-soft); color: var(--copper-dark); }
+.more { margin-top: 40px; }
+.more-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.more-head h3 { font-size: 22px; }
+.more-note { font-size: 14px; color: var(--stone-600); max-width: 420px; line-height: 1.45; }
+.more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.more-item {
+  background: var(--cream); border: 1px solid var(--stone-200);
+  border-radius: 12px; padding: 16px 18px; min-width: 0;
+}
+.more-item h4 { font-size: 18px; margin: 8px 0 6px; }
+.more-item p { font-size: 14.5px; color: var(--stone-600); line-height: 1.45; }
+@media (max-width: 700px) {
+  .more-grid { grid-template-columns: 1fr; }
+}
 </style>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
@@ -686,9 +702,9 @@ label.menu-toggle { display: none; }
     <div class="section-head">
       <div>
         <div class="kicker">Selected work</div>
-        <h2 class="section-title">Delivered programs and working prototypes</h2>
+        <h2 class="section-title">Enablement work and applied systems</h2>
       </div>
-      <p class="section-lede">Case studies describe what I owned, what exists today, and what has not yet been measured.</p>
+      <p class="section-lede">Three cases that show enablement work, a system in active use, and a learning pathway in design.</p>
     </div>
     <div class="cards">
       <article class="card">
@@ -706,10 +722,10 @@ label.menu-toggle { display: none; }
 </svg></div>
         <div class="card-body">
           <div class="card-top">
-            <h3>District AI professional learning</h3>
-            <span class="status status-delivered">Delivered program</span>
+            <h3>AI professional learning and staff workflows</h3>
+            <span class="status status-delivered">Active program</span>
           </div>
-          <p class="card-desc">Workshops, office hours, playbooks, and a role-based video series for educators in a regulated, student-data environment, plus a champion and ambassador network I built and run.</p>
+          <p class="card-desc">Workshops, office hours, playbooks, and a role-based video series for educators, plus a champion network I built and run, and staff workflows I am building and implementing.</p>
           <a class="card-link" href="case-pd.html">Read the case study <svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </article>
@@ -718,31 +734,57 @@ label.menu-toggle { display: none; }
         <div class="card-body">
           <div class="card-top">
             <h3>EVIE classroom assistant</h3>
-            <span class="status status-proto">Prototype</span>
+            <span class="status status-active">In active use</span>
           </div>
-          <p class="card-desc">A local, on-premise voice assistant I designed and iterate on so classroom questions can be answered without sending audio to a cloud model.</p>
+          <p class="card-desc">An on-premise, custom-built, in-house local LLM and classroom assistant. Complete, in active use, and continually updated.</p>
           <a class="card-link" href="case-evie.html">Read the case study <svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </article>
       <article class="card">
-        <div class="card-visual"><svg viewBox="0 0 320 140" role="img" aria-label="CaddieJr coaching flow: plans, sessions, analysis">
-  <text x="160" y="36" text-anchor="middle" font-family="Newsreader, serif" font-size="22" fill="#1C1915">CaddieJr</text>
-  <rect x="16" y="56" width="88" height="52" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
-  <text x="60" y="87" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" font-weight="700" fill="#1C1915">Plans</text>
-  <rect x="116" y="56" width="88" height="52" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
-  <text x="160" y="87" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" font-weight="700" fill="#1C1915">Sessions</text>
-  <rect x="216" y="56" width="88" height="52" rx="8" fill="#F3E4D2" stroke="#C4A574"/>
-  <text x="260" y="87" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" font-weight="700" fill="#8E5520">Analysis</text>
+        <div class="card-visual"><svg viewBox="0 0 320 140" role="img" aria-label="Applied AI pathway in design: introduction, applied projects, credentials">
+  <rect x="10" y="44" width="90" height="52" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
+  <text x="55" y="68" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="700" fill="#1C1915">Introduction</text>
+  <text x="55" y="84" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="11" fill="#5A544C">to AI course</text>
+  <rect x="115" y="44" width="90" height="52" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
+  <text x="160" y="68" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="700" fill="#1C1915">Applied</text>
+  <text x="160" y="84" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="11" fill="#5A544C">projects</text>
+  <rect x="220" y="44" width="90" height="52" rx="8" fill="#F3E4D2" stroke="#C4A574"/>
+  <text x="265" y="68" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="700" fill="#8E5520">Pathway</text>
+  <text x="265" y="84" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="11" fill="#8E5520">in design</text>
+  <text x="160" y="28" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="600" fill="#8E5520">Build-first Applied AI sequence</text>
 </svg></div>
         <div class="card-body">
           <div class="card-top">
-            <h3>CaddieJr coaching platform</h3>
-            <span class="status status-beta">Gated beta</span>
+            <h3>Applied AI pathway</h3>
+            <span class="status status-plan">In design</span>
           </div>
-          <p class="card-desc">An AI golf coaching platform I built, now in gated beta and market-ready, pre-launch. Coaching plans, adaptive skill plans, and session analysis.</p>
-          <a class="card-link" href="https://www.caddiejr.com/">Visit caddiejr.com <svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <p class="card-desc">A build-first Applied AI sequence I am designing so learners move from an introduction to AI into applied projects and credentials, proposed for 2027 to 2028.</p>
+          <a class="card-link" href="case-pathway.html">Read the case study <svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </article>
+    </div>
+    <div class="more" id="more">
+      <div class="more-head">
+        <h3>More builds</h3>
+        <p class="more-note">Applied edge and robotics work that shows technical range. These are listed here, not as the lead cases for an enablement role.</p>
+      </div>
+      <div class="more-grid">
+        <article class="more-item">
+          <span class="status status-plan">In progress</span>
+          <h4>FieldSense</h4>
+          <p>An AI edge node, formerly GrowSage, for plant imaging and plant-health guidance. Designed as a portable, off-grid device. Entered in the national Presidential AI Challenge for 2026 to 27. Not presented as an operational product.</p>
+        </article>
+        <article class="more-item">
+          <span class="status status-plan">In development</span>
+          <h4>AI sorter</h4>
+          <p>Computer vision training with robotic arms that sort items into bins. Built as a class manufacturing project that I lead. A working-build target was set for 6 November 2026; later status still needs confirmation.</p>
+        </article>
+        <article class="more-item">
+          <span class="status status-plan">Custom build</span>
+          <h4>Bandit</h4>
+          <p>A custom in-house raccoon robot, based on Microduck, an open-source biped platform from Pollen Robotics. Details of the current build are not yet on file here.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -764,7 +806,7 @@ label.menu-toggle { display: none; }
       </article>
       <article class="step">
         <div class="step-num">02</div>
-        <h3>Prototype, then hand it off</h3>
+        <h3>Build a proof of concept, then hand it off</h3>
         <p>I build a working proof of concept and train the host team to sustain it. Capability should not depend on me remaining in the room.</p>
       </article>
       <article class="step">
@@ -954,7 +996,7 @@ label.menu-toggle { display: none; }
           <div class="bar-row"><span class="lab">Completions</span><div class="bar-track"><div class="bar-fill" style="width:32.5%"></div></div><span class="val">975</span></div>
           <div class="bar-row"><span class="lab">Replies</span><div class="bar-track"><div class="bar-fill" style="width:6.5%"></div></div><span class="val">195</span></div>
         </div>
-        <p class="exhibit-source">Attendance goal is about 300 staff. Video unique views of 750, 1,350, and 1,950 are 25%, 45%, and 65% of a roughly 3,000-employee reach ladder. Completions assume 50% of day-90 viewers. Replies assume 20% of completers. Reach is not weekly use.</p>
+        <p class="exhibit-source">Attendance goal is about 300 staff. Video unique views of 750, 1,350, and 1,950 are 25%, 45%, and 65% of a roughly 3,000-staff reach ladder. Completions assume 50% of day-90 viewers. Replies assume 20% of completers. Reach is not weekly use.</p>
       </article>
 
       <article class="exhibit wide">

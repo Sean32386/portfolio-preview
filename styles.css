@@ -585,3 +585,19 @@ label.menu-toggle { display: none; }
   .bar-row { grid-template-columns: 100px 1fr 52px; }
 }
 .arch { overflow: hidden; }
+
+.status-active { background: var(--copper-soft); color: var(--copper-dark); }
+.more { margin-top: 40px; }
+.more-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.more-head h3 { font-size: 22px; }
+.more-note { font-size: 14px; color: var(--stone-600); max-width: 420px; line-height: 1.45; }
+.more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.more-item {
+  background: var(--cream); border: 1px solid var(--stone-200);
+  border-radius: 12px; padding: 16px 18px; min-width: 0;
+}
+.more-item h4 { font-size: 18px; margin: 8px 0 6px; }
+.more-item p { font-size: 14.5px; color: var(--stone-600); line-height: 1.45; }
+@media (max-width: 700px) {
+  .more-grid { grid-template-columns: 1fr; }
+}

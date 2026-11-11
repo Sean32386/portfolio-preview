@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EVIE classroom assistant | Sean W. Seder, Ed.D.</title>
-<meta name="description" content="Prototype case study of EVIE, a local on-premise classroom AI assistant designed by Sean W. Seder, Ed.D.">
+<meta name="description" content="Case study of EVIE, an on-premise custom-built local LLM and classroom assistant, designed by Sean W. Seder, Ed.D. and in active use.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -596,6 +596,22 @@ label.menu-toggle { display: none; }
   .bar-row { grid-template-columns: 100px 1fr 52px; }
 }
 .arch { overflow: hidden; }
+
+.status-active { background: var(--copper-soft); color: var(--copper-dark); }
+.more { margin-top: 40px; }
+.more-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+.more-head h3 { font-size: 22px; }
+.more-note { font-size: 14px; color: var(--stone-600); max-width: 420px; line-height: 1.45; }
+.more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.more-item {
+  background: var(--cream); border: 1px solid var(--stone-200);
+  border-radius: 12px; padding: 16px 18px; min-width: 0;
+}
+.more-item h4 { font-size: 18px; margin: 8px 0 6px; }
+.more-item p { font-size: 14.5px; color: var(--stone-600); line-height: 1.45; }
+@media (max-width: 700px) {
+  .more-grid { grid-template-columns: 1fr; }
+}
 </style>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
@@ -634,13 +650,13 @@ label.menu-toggle { display: none; }
 <section class="case-hero">
   <div class="wrap">
     <a class="back" href="index.html#work"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to work</a>
-    <div class="kicker">Case study · Prototype</div>
-    <h1>EVIE, a local on-premise classroom assistant</h1>
-    <p class="lede">A voice assistant I designed, built, and iterate on so a class can get in-room help without sending classroom audio to a cloud model. This is a prototype on one machine, not a production product.</p>
+    <div class="kicker">Case study · In active use</div>
+    <h1>EVIE, an on-premise local LLM and classroom assistant</h1>
+    <p class="lede">An on-premise, custom-built, in-house local LLM and classroom assistant. It is complete and in active use. I continue to add updates and iterations so a class can get in-room help without sending classroom audio to a cloud model.</p>
     <div class="case-meta">
       <span><strong>Role.</strong> Designer and builder; I am not a software engineer by title</span>
       <span><strong>Users.</strong> In-room classroom support</span>
-      <span><strong>Status.</strong> Prototype, 2025 to present</span>
+      <span><strong>Status.</strong> Complete, in active use, with ongoing updates. 2025 to present</span>
       <span><strong>Stack.</strong> Ollama, Qwen 2.5 32B, local speech pipeline</span>
     </div>
   </div>
@@ -653,13 +669,13 @@ label.menu-toggle { display: none; }
     </div>
     <div class="case-block">
       <h2>What I owned, and the decisions I made</h2>
-      <p>I designed the system, chose a fully local inference path, and I continue to iterate on it using Claude Code and GitHub. The important decisions were to keep audio and generation on the machine, to use a custom model file for personality and topic-redirection rules, and to accept a simpler local retriever instead of a hosted vector database. Those choices trade multi-user product polish for privacy and a system one person can operate in a classroom.</p>
+      <p>I designed and built the system as a custom in-house assistant, chose a fully local inference path, and I continue to add updates and iterations using Claude Code and GitHub. The important decisions were to keep audio and generation on the machine, to use a custom model file for personality and topic-redirection rules, and to accept a simpler local retriever instead of a hosted vector database. Those choices favor privacy and a system I can operate and improve in a classroom, rather than a multi-tenant product.</p>
     </div>
     <div class="case-block wide">
       <h2>What was built, and how it works</h2>
       <p>The documented pipeline is orchestrated by a listener script. After a wake word or a hotkey, audio is recorded until a silence gate, transcribed, and routed to teacher-assist phrases, memory commands, a local joke file, or a general query. The general path may attach retrieved local notes. Ollama generates a reply. A local text-to-speech service speaks it. The display and lights follow listening, thinking, and speaking states. Memory and daily transcripts are stored in two separate local SQLite databases.</p>
       <div class="arch"><svg viewBox="0 0 1040 380" width="100%" role="img" aria-labelledby="archTitle archDesc">
-  <title id="archTitle">EVIE architecture, prototype. Documented voice pipeline on a classroom workstation, with curriculum ingestion marked as not confirmed.</title>
+  <title id="archTitle">EVIE architecture. Documented voice pipeline on a classroom workstation, with curriculum ingestion marked as not confirmed.</title>
   <desc id="archDesc">Hardware on the left: microphone, speaker, classroom display, Nanoleaf lights, and a local workstation. Software flow: wake word, speech to text, router, optional retrieval, local Ollama model, and text to speech. Curriculum PDFs are marked uncertain. Vision cameras are marked not built.</desc>
   <rect x="8" y="8" width="1024" height="364" rx="16" fill="#FFFCF8" stroke="#E4DDD4"/>
   <text x="28" y="36" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="700" fill="#8E5520" letter-spacing="0.12em">HARDWARE</text>
@@ -745,7 +761,7 @@ label.menu-toggle { display: none; }
     </div>
     <div class="case-block">
       <h2>Current status and actual usage</h2>
-      <p>Project documentation through mid-August 2026 describes a substantial local classroom assistant. An imported note from November 1, 2026 says basic classroom question-and-answer has been demonstrated. That is a user-provided snapshot, not a test log reviewed for this page. Whether EVIE is running in class in a given week has not been independently confirmed here, so daily-use language is not used.</p>
+      <p>EVIE is complete and in active use as the classroom assistant I built, with constant updates and iterations. The core in-room loop (wake word, speech to text, local language model, spoken replies, display, and lights) is the system in use. Features that are still being added, including camera vision, bilingual tutoring, and a fuller curriculum corpus, are listed separately and are not claimed as part of current use.</p>
     </div>
     <div class="case-block">
       <h2>Results and evaluation</h2>
@@ -757,12 +773,12 @@ label.menu-toggle { display: none; }
     <div class="case-block">
       <h2>Limitations and next steps</h2>
       <ul>
-        <li>This is one classroom machine, not a multi-tenant product. There is no staging and production split, which is appropriate for a prototype.</li>
+        <li>This is one classroom machine, not a multi-tenant product. There is no staging and production split, which fits a custom in-house system.</li>
         <li>Safety rules live in the model system prompt, not in a separate software filter. That is a design choice, not a COPPA or FERPA certification.</li>
         <li>Known issues documented by me include a stuck thinking state after reboot and driver errors after an unclean shutdown.</li>
         <li>The public write-up can describe architecture. It cannot ship a runnable repository, because model weights, databases, and the live environment stay on the classroom machine.</li>
       </ul>
-      <p>The highest-value next step is a short, repeatable evaluation: fixed prompts, timed turns, and a reboot test. That would make the prototype inspectable without turning the story into software-engineering employment.</p>
+      <p>The highest-value next step is a short, repeatable evaluation: fixed prompts, timed turns, and a reboot test. That would make active use inspectable without turning the story into software-engineering employment.</p>
     </div>
   </div>
 </section>
