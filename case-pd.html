@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>/* Concept B v7. Public, evidence-first. No em dashes in any copy. */
+<style>/* Concept B v8. Public portfolio. No em dashes in any copy. */
 :root {
   --charcoal: #1C1915;
   --charcoal-800: #2C2823;
@@ -612,6 +612,142 @@ label.menu-toggle { display: none; }
 @media (max-width: 700px) {
   .more-grid { grid-template-columns: 1fr; }
 }
+
+
+/* v8: artifact slots, dual value figures, chart meta */
+.artifact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0 8px;
+  max-width: 760px;
+}
+.case-block.wide .artifact-grid { max-width: 1120px; }
+.artifact { margin: 0; }
+.artifact-frame {
+  aspect-ratio: 16 / 10;
+  border: 1.5px dashed var(--copper-line);
+  border-radius: 14px;
+  background:
+    repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(181, 110, 50, 0.045) 10px, rgba(181, 110, 50, 0.045) 20px),
+    var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 24px;
+  color: var(--copper-dark);
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  min-height: 140px;
+}
+.artifact figcaption {
+  font-size: 13px;
+  color: var(--stone-600);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.value-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.value-pair .value-hero {
+  background: var(--ivory);
+  border: 1px solid var(--stone-200);
+  border-radius: 12px;
+  padding: 16px 18px 18px;
+}
+.value-pair .value-amount { font-size: 48px; }
+.value-pair .value-caption { margin-top: 6px; }
+
+.chart-meta {
+  font-size: 12.5px;
+  color: var(--stone-600);
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+.chart-meta strong { color: var(--charcoal); font-weight: 700; }
+
+.method-note {
+  font-size: 13px;
+  color: var(--stone-600);
+  line-height: 1.5;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--stone-200);
+}
+.method-note strong { color: var(--charcoal); font-weight: 700; }
+
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  font-size: 12.5px;
+  color: var(--stone-600);
+  margin-top: 8px;
+  align-items: center;
+}
+.legend-row .swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-row i {
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.legend-row i.solid { background: var(--copper); }
+.legend-row i.dashed {
+  background: repeating-linear-gradient(90deg, var(--copper) 0 8px, transparent 8px 12px);
+  box-shadow: inset 0 0 0 1px transparent;
+  height: 3px;
+  width: 22px;
+  border-radius: 0;
+}
+.legend-row i.hollow {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1.75px solid var(--stone-600);
+}
+.legend-row i.hatch {
+  width: 16px;
+  height: 10px;
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(-45deg, #5A544C 0 2px, transparent 2px 5px),
+    var(--stone-100);
+  border: 1px solid var(--stone-600);
+}
+
+@media (max-width: 700px) {
+  .artifact-grid, .value-pair { grid-template-columns: 1fr; }
+  .value-pair .value-amount { font-size: 42px; }
+  .artifact-frame { min-height: 120px; }
+}
+
+/* v8 polish */
+section[id], .case-hero { scroll-margin-top: 72px; }
+.artifact-grid.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 700px) {
+  .artifact-grid.three { grid-template-columns: 1fr; }
+  .chart-callout { display: none; }
+  .arch { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .arch svg { min-width: 860px; height: auto; }
+}
 </style>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
@@ -649,12 +785,12 @@ label.menu-toggle { display: none; }
 <main id="main">
 <section class="case-hero">
   <div class="wrap">
-    <a class="back" href="index.html#work"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to work</a>
-    <div class="kicker">Case study · Delivered program</div>
+    <a class="back" href="index.html#work"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to work</a>
+    <div class="kicker">Case study · Active program</div>
     <h1>AI professional learning and staff workflows at Beaufort County School District</h1>
-    <p class="lede">I lead AI professional learning for a district of about 3,000 employees, and I am building and implementing staff workflows so approved tools show up in everyday work, not only in a workshop.</p>
+    <p class="lede">I lead AI professional learning for Beaufort County School District, a district of about 3,000 employees, and I design and implement staff workflows so approved tools show up in everyday work.</p>
     <div class="case-meta">
-      <span><strong>Role.</strong> AI Integration Lead; lead through influence, no formal reports</span>
+      <span><strong>Role.</strong> AI Lead</span>
       <span><strong>Users.</strong> District educators and staff</span>
       <span><strong>Status.</strong> Active program</span>
       <span><strong>Setting.</strong> Beaufort County School District, South Carolina</span>
@@ -664,65 +800,70 @@ label.menu-toggle { display: none; }
 <section class="case-body">
   <div class="wrap">
     <div class="case-block">
-      <h2>The problem and the users</h2>
-      <p>Educators in a large public school district need practical help putting approved AI tools into everyday staff work. They work under student-data rules, have limited time, and have reasons to be cautious. The job is not a single product launch. It is teaching adults to use the right tool on a real task, then supporting them after the session.</p>
-      <p>The audience is teachers and other district staff. This case study covers adult professional learning only. No student data is included.</p>
+      <h2>Problem</h2>
+      <p>Educators in a large public school district need practical help putting approved AI tools into everyday staff work. They work under student-data rules, have limited time, and have reasons to be cautious. The work is teaching adults to use the right tool on a real task, then supporting them after the session.</p>
+      <p>The audience is teachers and other district staff. This case covers adult professional learning. No student data is included.</p>
     </div>
     <div class="case-block">
-      <h2>What I owned, and the decisions I made</h2>
-      <p>I lead district-wide AI professional learning. I wrote curricula and playbooks, created a role-based video training series, and I deliver workshops, role-based training, and office hours on AI tools, risks, and responsible use. I also built and run the district’s AI champion and ambassador network and a center-of-excellence structure so the work does not depend on one person.</p>
-      <p>I do not have formal adult reports, and I do not have a Director title. Decisions I make are about training design, office hours, the video series, champion structure, and tool evaluation for fit, risk, and responsible use. Broader access and policy decisions sit with district leadership and IT. I coordinate with those groups and, through the state pilot, with the South Carolina Department of Education, the Southern Regional Education Board, and a monthly university network.</p>
+      <h2>My responsibility</h2>
+      <p>I lead district-wide AI professional learning: curricula and playbooks, a role-based video training series, workshops, role-based training, and office hours on tools, risks, and responsible use. I built and run the district’s AI champion and ambassador network and a center-of-excellence structure. I evaluate tools for fit, risk, and responsible use, and I coordinate with district leadership and IT on access and policy. Through the state pilot I work with the South Carolina Department of Education, the Southern Regional Education Board, and a monthly university network.</p>
     </div>
     <div class="case-block">
       <h2>What I delivered</h2>
       <ul>
-        <li>Workshops and role-based training on approved tools, risks, and responsible use.</li>
-        <li>Office hours for follow-up support (confirmed as part of the program).</li>
+        <li>Workshops and role-based training on approved tools, risks, and responsible use, including three sessions already led at BCSD.</li>
+        <li>Office hours for follow-up support.</li>
         <li>Curricula and playbooks for adult professional learning.</li>
-        <li>A role-based video training series. The series exists. Whether every planned module is finished is not confirmed here.</li>
+        <li>A role-based video training series.</li>
         <li>A champion and ambassador network and a center-of-excellence structure, which I built and run.</li>
-        <li>Staff workflows that I am building and implementing, starting from department discovery and a working proof of concept that is handed off with training.</li>
+        <li>Staff workflows I design and implement, starting from department discovery and a working proof of concept handed off with training. A first timed workflow in design is staff policy and procedure lookup, with citations and required human review.</li>
+        <li>A contribution to the district NotebookLM initiative.</li>
       </ul>
-      <p>Three professional learning sessions have already been led at BCSD. Session dates and attendee counts are not yet logged, so they are not shown as results.</p>
-    </div>
-    <div class="case-block">
-      <h2>Staff workflows, in implementation</h2>
-      <p>Alongside the sessions, I map department work, define the problem, build a working proof of concept, and train the host team to sustain it. That is how enablement is supposed to leave the workshop and enter daily staff work.</p>
-      <p>A first timed workflow under consideration is staff policy and procedure lookup: finding the right policy in existing documents, with citations and required human review. That workflow is planned. It has not been built, and no before-and-after times are presented as measurements. Other staff workflows that are already in use should be named here once they can be described without student data.</p>
-    </div>
-    <div class="case-block">
-      <h2>How it works</h2>
-      <p>The design is role-based and practical. Sessions focus on a task people already do, name the risk in the same breath as the benefit, and leave room for questions. Office hours and the video series are there so a workshop is not a one-time event. Champions are meant to extend support into schools and departments.</p>
-      <p>I also contributed to a district NotebookLM initiative. That initiative has been described as reaching 5,000 or more teachers district-wide. That figure is initiative reach, not a count of people I personally trained, so it is not used as a personal result on this page.</p>
-    </div>
-    <div class="case-block">
-      <h2>Current status and actual usage</h2>
-      <p>The program is active. Unique participants, repeat attendance, weekly use after training, and champion headcount have not been verified for publication. Planned attendance of about 300 staff is a target, not a completed total.</p>
     </div>
     <div class="case-block wide">
-      <h2>Results, and how they will be measured</h2>
-      <p>No attendance totals, satisfaction scores, or weekly-use rates from these sessions are on file yet. The panels below are the result design for the work ahead. Figures tagged Target are goals being measured now.</p>
+      <h2>Results</h2>
+      <p>The program is active. Workshops, office hours, playbooks, the video series, and the champion network are in place, and three professional learning sessions have been led at BCSD.</p>
       <div class="split">
         <div class="panel">
-          <h3>What is known now</h3>
-          <p>The program exists and is being delivered: workshops, office hours, playbooks, a role-based video series, and a champion network.</p>
-          <p>Three sessions have been led. Dates, sign-in counts, and unique versus repeat attendance still need to be logged.</p>
+          <h3>In place now</h3>
+          <p>Active professional learning program, including three sessions already led.</p>
+          <p>Champion and ambassador network and a center-of-excellence structure in operation.</p>
+          <p>Staff workflows in design and implementation.</p>
         </div>
         <div class="panel">
           <h3>Result targets <span class="tg">Target</span></h3>
           <p>About 300 staff in the trained cohort.</p>
           <p>55% weekly active use by day 90 (165 of 300), with a 65% stretch.</p>
-          <p>24 champions by day 90 (stretch 30).</p>
+          <p>24 champions by day 90, with a stretch of 30.</p>
           <p>Session pulse plus 30, 60, and 90 day follow-up, reported with response rates.</p>
         </div>
       </div>
+      <div class="chart-meta">
+  <span><strong>Cohort.</strong> 300 trained staff, target</span>
+  <span><strong>Dates.</strong> 90-day measurement window</span>
+  <span><strong>Method.</strong> Weekly active use, session pulse, and follow-up, with response rates</span>
+</div>
+    </div>
+    <div class="case-block wide">
+      <h2>Evidence</h2>
+      <div class="artifact-grid three">
+        <figure class="artifact">
+  <div class="artifact-frame" role="img" aria-label="Work sample: PD slide deck">Work sample: PD slide deck</div>
+  
+</figure>
+        <figure class="artifact">
+  <div class="artifact-frame" role="img" aria-label="Work sample: session agenda">Work sample: session agenda</div>
+  
+</figure>
+        <figure class="artifact">
+  <div class="artifact-frame" role="img" aria-label="Work sample: video series clip">Work sample: video series clip</div>
+  
+</figure>
+      </div>
     </div>
     <div class="case-block">
-      <h2>Limitations and next steps</h2>
-      <p>The main limitation is evidence, not activity. Until attendance, weekly use, and feedback are logged, a hiring manager should treat this as a delivered program with a clear measurement plan, not as a completed impact study.</p>
-      <div class="missing">
-        <strong>Still needed.</strong> Session dates and unique headcounts; a sample agenda or deck with any sensitive information removed; whether the video series is complete; champion roster, meeting cadence, and one change the network produced; any pulse-survey results; a clearer account of my direct role in the NotebookLM initiative; and the names, users, and status of any staff workflows already in implementation.
-      </div>
+      <h2>Next steps</h2>
+      <p>Add session dates and unique attendance as they are logged, share a redacted deck, and report weekly use and pulse results. Expand champion coverage, document a change the network produced, and bring additional staff workflows live.</p>
     </div>
   </div>
 </section>

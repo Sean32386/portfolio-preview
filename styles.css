@@ -1,4 +1,4 @@
-/* Concept B v7. Public, evidence-first. No em dashes in any copy. */
+/* Concept B v8. Public portfolio. No em dashes in any copy. */
 :root {
   --charcoal: #1C1915;
   --charcoal-800: #2C2823;
@@ -600,4 +600,140 @@ label.menu-toggle { display: none; }
 .more-item p { font-size: 14.5px; color: var(--stone-600); line-height: 1.45; }
 @media (max-width: 700px) {
   .more-grid { grid-template-columns: 1fr; }
+}
+
+
+/* v8: artifact slots, dual value figures, chart meta */
+.artifact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0 8px;
+  max-width: 760px;
+}
+.case-block.wide .artifact-grid { max-width: 1120px; }
+.artifact { margin: 0; }
+.artifact-frame {
+  aspect-ratio: 16 / 10;
+  border: 1.5px dashed var(--copper-line);
+  border-radius: 14px;
+  background:
+    repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(181, 110, 50, 0.045) 10px, rgba(181, 110, 50, 0.045) 20px),
+    var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 24px;
+  color: var(--copper-dark);
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  min-height: 140px;
+}
+.artifact figcaption {
+  font-size: 13px;
+  color: var(--stone-600);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.value-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.value-pair .value-hero {
+  background: var(--ivory);
+  border: 1px solid var(--stone-200);
+  border-radius: 12px;
+  padding: 16px 18px 18px;
+}
+.value-pair .value-amount { font-size: 48px; }
+.value-pair .value-caption { margin-top: 6px; }
+
+.chart-meta {
+  font-size: 12.5px;
+  color: var(--stone-600);
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+.chart-meta strong { color: var(--charcoal); font-weight: 700; }
+
+.method-note {
+  font-size: 13px;
+  color: var(--stone-600);
+  line-height: 1.5;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--stone-200);
+}
+.method-note strong { color: var(--charcoal); font-weight: 700; }
+
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  font-size: 12.5px;
+  color: var(--stone-600);
+  margin-top: 8px;
+  align-items: center;
+}
+.legend-row .swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-row i {
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.legend-row i.solid { background: var(--copper); }
+.legend-row i.dashed {
+  background: repeating-linear-gradient(90deg, var(--copper) 0 8px, transparent 8px 12px);
+  box-shadow: inset 0 0 0 1px transparent;
+  height: 3px;
+  width: 22px;
+  border-radius: 0;
+}
+.legend-row i.hollow {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1.75px solid var(--stone-600);
+}
+.legend-row i.hatch {
+  width: 16px;
+  height: 10px;
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(-45deg, #5A544C 0 2px, transparent 2px 5px),
+    var(--stone-100);
+  border: 1px solid var(--stone-600);
+}
+
+@media (max-width: 700px) {
+  .artifact-grid, .value-pair { grid-template-columns: 1fr; }
+  .value-pair .value-amount { font-size: 42px; }
+  .artifact-frame { min-height: 120px; }
+}
+
+/* v8 polish */
+section[id], .case-hero { scroll-margin-top: 72px; }
+.artifact-grid.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 700px) {
+  .artifact-grid.three { grid-template-columns: 1fr; }
+  .chart-callout { display: none; }
+  .arch { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .arch svg { min-width: 860px; height: auto; }
 }

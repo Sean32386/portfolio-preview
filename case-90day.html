@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sample 90-Day AI Adoption Plan | Sean W. Seder, Ed.D.</title>
-<meta name="description" content="A proposed 90-day AI adoption plan with labeled targets, not achieved results, by Sean W. Seder, Ed.D.">
+<meta name="description" content="A sample 90-day AI adoption plan with labeled targets, by Sean W. Seder, Ed.D.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>/* Concept B v7. Public, evidence-first. No em dashes in any copy. */
+<style>/* Concept B v8. Public portfolio. No em dashes in any copy. */
 :root {
   --charcoal: #1C1915;
   --charcoal-800: #2C2823;
@@ -612,6 +612,142 @@ label.menu-toggle { display: none; }
 @media (max-width: 700px) {
   .more-grid { grid-template-columns: 1fr; }
 }
+
+
+/* v8: artifact slots, dual value figures, chart meta */
+.artifact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0 8px;
+  max-width: 760px;
+}
+.case-block.wide .artifact-grid { max-width: 1120px; }
+.artifact { margin: 0; }
+.artifact-frame {
+  aspect-ratio: 16 / 10;
+  border: 1.5px dashed var(--copper-line);
+  border-radius: 14px;
+  background:
+    repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(181, 110, 50, 0.045) 10px, rgba(181, 110, 50, 0.045) 20px),
+    var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 24px;
+  color: var(--copper-dark);
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  min-height: 140px;
+}
+.artifact figcaption {
+  font-size: 13px;
+  color: var(--stone-600);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.value-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.value-pair .value-hero {
+  background: var(--ivory);
+  border: 1px solid var(--stone-200);
+  border-radius: 12px;
+  padding: 16px 18px 18px;
+}
+.value-pair .value-amount { font-size: 48px; }
+.value-pair .value-caption { margin-top: 6px; }
+
+.chart-meta {
+  font-size: 12.5px;
+  color: var(--stone-600);
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+.chart-meta strong { color: var(--charcoal); font-weight: 700; }
+
+.method-note {
+  font-size: 13px;
+  color: var(--stone-600);
+  line-height: 1.5;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--stone-200);
+}
+.method-note strong { color: var(--charcoal); font-weight: 700; }
+
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  font-size: 12.5px;
+  color: var(--stone-600);
+  margin-top: 8px;
+  align-items: center;
+}
+.legend-row .swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-row i {
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.legend-row i.solid { background: var(--copper); }
+.legend-row i.dashed {
+  background: repeating-linear-gradient(90deg, var(--copper) 0 8px, transparent 8px 12px);
+  box-shadow: inset 0 0 0 1px transparent;
+  height: 3px;
+  width: 22px;
+  border-radius: 0;
+}
+.legend-row i.hollow {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1.75px solid var(--stone-600);
+}
+.legend-row i.hatch {
+  width: 16px;
+  height: 10px;
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(-45deg, #5A544C 0 2px, transparent 2px 5px),
+    var(--stone-100);
+  border: 1px solid var(--stone-600);
+}
+
+@media (max-width: 700px) {
+  .artifact-grid, .value-pair { grid-template-columns: 1fr; }
+  .value-pair .value-amount { font-size: 42px; }
+  .artifact-frame { min-height: 120px; }
+}
+
+/* v8 polish */
+section[id], .case-hero { scroll-margin-top: 72px; }
+.artifact-grid.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 700px) {
+  .artifact-grid.three { grid-template-columns: 1fr; }
+  .chart-callout { display: none; }
+  .arch { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .arch svg { min-width: 860px; height: auto; }
+}
 </style>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
@@ -649,12 +785,12 @@ label.menu-toggle { display: none; }
 <main id="main">
 <section class="case-hero">
   <div class="wrap">
-    <a class="back" href="index.html#plan"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to the plan</a>
+    <a class="back" href="index.html#plan"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to the plan</a>
     <div class="kicker">Planning sample</div>
     <h1>Sample 90-Day AI Adoption Plan</h1>
-    <p class="lede">A proposed rollout for a trained staff cohort. This is a planning sample I would bring to a new organization and adapt. It is not a report of results already achieved at Beaufort County School District.</p>
+    <p class="lede">A 90-day rollout I would bring to a new organization and adapt to its tools, policy, and time standards. Figures tagged Target are planning models.</p>
     <div class="case-meta">
-      <span><strong>Status.</strong> Proposed approach</span>
+      <span><strong>Status.</strong> Planning sample</span>
       <span><strong>Cohort.</strong> About 300 trained staff, target</span>
       <span><strong>Primary outcome.</strong> Weekly active use, not attendance</span>
     </div>
@@ -662,32 +798,39 @@ label.menu-toggle { display: none; }
 </section>
 <section class="case-body">
   <div class="wrap">
-    <div class="case-block wide">
-      <p class="plan-note"><strong>Proposed approach. Targets and illustrative calculations, not achieved results.</strong> Figures tagged Target are goals being measured now.</p>
-    </div>
     <div class="case-block">
-      <h2>The problem I would start with</h2>
+      <h2>Problem</h2>
       <p>A workshop can fill a room and still leave weekly use unchanged. This plan treats attendance as an input. The outcome is whether trained staff use an approved tool on real work at least weekly, whether that work is reviewed, and whether the behavior lasts through 90 days.</p>
-      <p>The sample uses a school-district cohort because that is the setting I know. The transferable structure (baseline, role-based training, champions, office hours, a department workflow, and 30/60/90 measurement) is what I would carry into a company, with that organization’s tools, policy, and time standards in place of these illustrations.</p>
+      <p>The sample uses a school-district cohort because that is the setting I know. The same structure (baseline, role-based training, champions, office hours, a department workflow, and 30/60/90 measurement) transfers to a company, with that organization’s tools, policy, and time standards.</p>
     </div>
     <div class="case-block">
-      <h2>What I would own in 90 days</h2>
+      <h2>My responsibility</h2>
       <ul>
-        <li>A baseline of current weekly use, taken before or at the first session, clearly labeled as a survey result.</li>
-        <li>Role-based training, office hours, and short follow-up, not a single event.</li>
+        <li>A baseline of current weekly use, taken before or at the first session and labeled as a survey result.</li>
+        <li>Role-based training, office hours, and short follow-up, rather than a single event.</li>
         <li>A champion group with a defined selection rule, responsibilities, and an escalation path.</li>
-        <li>One department workflow, timed, with human review built into the after condition. A candidate in a school setting is staff policy and procedure lookup. That workflow is planned, not built, and is not presented here as a completed implementation.</li>
-        <li>A simple dashboard of weekly use, hours, reach, and champion coverage, with every unverified figure tagged as a target or estimate.</li>
+        <li>One department workflow, timed, with human review built into the after condition. In a school setting, a first candidate is staff policy and procedure lookup.</li>
+        <li>A simple dashboard of weekly use, hours, reach, and champion coverage, with every planning figure tagged as a target or estimate.</li>
+      </ul>
+    </div>
+    <div class="case-block">
+      <h2>What I delivered</h2>
+      <p>The 90-day structure I would stand up and adapt:</p>
+      <ul>
+        <li><strong>Champion model.</strong> The network structure already exists in my current work. Coverage target: 24 champions by day 90 (8% of 300), stretch 30 (10%). Selection favors practitioners who already use an approved tool and can coach peers, with coverage across sites and functions. Champions model one useful workflow, support colleagues, log barriers, and escalate policy or data questions. Support comes from playbooks, the role-based video series, and office hours. Short check-ins land at 30, 60, and 90 days. Privacy, student-data, or tool-approval issues go to the appropriate district or IT channel.</li>
+        <li><strong>Department workflow.</strong> A first timed workflow in this setting is staff policy and procedure lookup: finding the right policy or procedure in existing documents, with citations and required human review.</li>
+        <li><strong>Operating practices.</strong> A short list of approved tools, with a clear path to request something new. Data-handling rules that keep personal and regulated information out of unapproved systems. Human review before AI output is used in a decision or an external document. A simple quality check (source, accuracy, tone) built into the workflow. A named escalation path for privacy, legal, or technical issues.</li>
       </ul>
     </div>
     <div class="case-block wide">
-      <h2>Adoption targets</h2>
+      <h2>Results</h2>
+      <p>The figures in this section are planning models, tagged Target.</p>
       <div class="exhibit" style="margin-bottom:16px">
         <div class="exhibit-kicker">Adoption curve</div>
-        <h3 class="exhibit-title">Weekly use reaches 55% by day 90 in a 300-person cohort <span class="tg">Target</span></h3>
-        <div class="exhibit-viz"><svg viewBox="0 0 560 270" width="100%" role="img" aria-labelledby="adTitle adDesc">
+        <h3 class="exhibit-title">Weekly use reaches 55% by day 90 <span class="tg">Target</span></h3>
+        <div class="exhibit-viz"><svg viewBox="0 0 560 290" width="100%" role="img" aria-labelledby="adTitle adDesc">
   <title id="adTitle">Target adoption ladder from a 7.5 percent estimated baseline to a 55 percent day-90 target, with a 65 percent stretch</title>
-  <desc id="adDesc">Line chart of weekly active use at an estimated baseline, then target values at day 30, day 60, day 90, and a stretch mark.</desc>
+  <desc id="adDesc">Dashed line chart of weekly active use. The 7.5 percent mark is an estimated baseline. Day 30, day 60, day 90, and stretch marks are targets. No measured results are plotted.</desc>
   <g fill="none" stroke="#E4DDD4" stroke-width="1">
     <line x1="56" y1="210" x2="536" y2="210"/>
     <line x1="56" y1="158.14" x2="536" y2="158.14"/>
@@ -702,12 +845,11 @@ label.menu-toggle { display: none; }
     <text x="48" y="58">60%</text>
     <text x="48" y="32">70%</text>
   </g>
-  <g font-family="Source Sans 3, sans-serif" font-size="13" fill="#5A544C" text-anchor="middle">
-    <text x="56" y="232">Baseline</text><text x="172" y="232">Day 30</text><text x="288" y="232">Day 60</text><text x="404" y="232">Day 90</text><text x="520" y="232">Stretch</text>
+  <g font-family="Source Sans 3, sans-serif" font-size="12" fill="#5A544C" text-anchor="middle">
+    <text x="56" y="232">Est.</text><text x="172" y="232">Day 30</text><text x="288" y="232">Day 60</text><text x="404" y="232">Day 90</text><text x="520" y="232">Stretch</text>
   </g>
-  <path d="M56 190.5 L172 132.0 L288 93.0 L404 67.0" stroke="#B56E32" stroke-width="2.75" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M404 67.0 L520 41.0" stroke="#B56E32" stroke-width="2.25" fill="none" stroke-dasharray="6 5" stroke-linecap="round"/>
-  <circle cx="56" cy="190.5" r="5" fill="#FFFCF8" stroke="#5A544C" stroke-width="1.75"/>
+  <path d="M56 190.5 L172 132.0 L288 93.0 L404 67.0 L520 41.0" stroke="#B56E32" stroke-width="2.25" fill="none" stroke-dasharray="6 5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="56" cy="190.5" r="5.5" fill="#FFFCF8" stroke="#5A544C" stroke-width="1.75"/>
   <circle cx="172" cy="132.0" r="5.5" fill="#B56E32"/>
   <circle cx="288" cy="93.0" r="5.5" fill="#B56E32"/>
   <circle cx="404" cy="67.0" r="7" fill="#8E5520" stroke="#F3E4D2" stroke-width="2"/>
@@ -717,22 +859,38 @@ label.menu-toggle { display: none; }
   <text x="288" y="79.0" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" font-weight="700" fill="#1C1915">45%</text>
   <text x="404" y="51.0" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" font-weight="700" fill="#1C1915">55%</text>
   <text x="520" y="27.0" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" font-weight="600" fill="#8E5520">65%</text>
+  <g class="chart-callout">
   <rect x="250" y="4" width="128" height="38" rx="8" fill="#F3E4D2" stroke="#B56E32" stroke-width="1.25"/>
   <text x="314" y="20" text-anchor="middle" font-family="Newsreader, serif" font-size="16" font-weight="500" fill="#8E5520">55%</text>
   <text x="314" y="34" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="10" font-weight="700" fill="#8E5520" letter-spacing="0.08em">DAY 90 TARGET</text>
   <path d="M378 30 L396 58" stroke="#B56E32" stroke-width="1.25" fill="none"/>
+  </g>
+  <circle cx="56" cy="262" r="5" fill="#FFFCF8" stroke="#5A544C" stroke-width="1.75"/>
+  <text x="66" y="266" font-family="Source Sans 3, sans-serif" font-size="12" fill="#5A544C">Estimated baseline</text>
+  <line x1="200" y1="262" x2="230" y2="262" stroke="#B56E32" stroke-width="2.25" stroke-dasharray="6 5" stroke-linecap="round"/>
+  <text x="238" y="266" font-family="Source Sans 3, sans-serif" font-size="12" fill="#5A544C">Target</text>
+  <circle cx="310" cy="262" r="5" fill="#B56E32"/>
+  <text x="320" y="266" font-family="Source Sans 3, sans-serif" font-size="12" fill="#5A544C">Target mark</text>
 </svg></div>
-        <p class="exhibit-source">The 7.5% baseline is a November 2026 districtwide estimate, not a surveyed baseline of this cohort. It must be replaced by the pre-session survey. Day 30, 60, and 90 figures are targets. 65% is a stretch inside a 60 to 70% ambition, shown dashed so it is not read as the baseline promise.</p>
+        <div class="chart-meta">
+  <span><strong>Cohort.</strong> 300 trained staff, target</span>
+  <span><strong>Dates.</strong> 90-day window</span>
+  <span><strong>Method.</strong> Weekly active use, to be collected by survey or system log</span>
+</div>
+        <p class="exhibit-source">The 7.5% mark is a November 2026 districtwide estimate, shown as an estimated baseline, and will be replaced by the pre-session survey. Day 30, 60, and 90 figures are targets. 65% is a stretch inside a 60 to 70% ambition. All of these marks are dashed.</p>
       </div>
-    </div>
-    <div class="case-block wide">
-      <h2>Hours, correctly labeled</h2>
       <div class="exhibit" style="margin-bottom:16px">
         <div class="exhibit-kicker">Hours returned</div>
-        <h3 class="exhibit-title">3 hours returned per weekly user, including human review <span class="tg">Target</span></h3>
-        <div class="exhibit-viz"><svg viewBox="0 0 420 260" width="100%" role="img" aria-labelledby="hrTitle hrDesc">
-  <title id="hrTitle">Planning illustration of 8 hours before and 5 hours after, returning 3 hours per weekly user</title>
-  <desc id="hrDesc">Two bars comparing a planned before time of 8 hours with a planned after time of 5 hours, including human review.</desc>
+        <h3 class="exhibit-title">3 net hours returned per weekly user <span class="tg">Target</span></h3>
+        <div class="exhibit-viz"><svg viewBox="0 0 420 280" width="100%" role="img" aria-labelledby="hrTitle hrDesc">
+  <title id="hrTitle">Planning model of 8 hours estimated baseline and 5 hours after, returning 3 net hours per weekly user. Human review is included in the after time and counted once.</title>
+  <desc id="hrDesc">Two bars. The first is an estimated baseline of 8 hours, drawn with a hatch. The second is a 5 hour target after condition, including human review. The difference is 3 net hours returned.</desc>
+  <defs>
+    <pattern id="estHatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(-45)">
+      <rect width="8" height="8" fill="#EFE8DF"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#5A544C" stroke-width="2.2"/>
+    </pattern>
+  </defs>
   <g fill="none" stroke="#E4DDD4" stroke-width="1">
     <line x1="60" y1="200" x2="390" y2="200"/>
     <line x1="60" y1="164" x2="390" y2="164"/>
@@ -749,88 +907,116 @@ label.menu-toggle { display: none; }
     <text x="52" y="60">8</text>
     <text x="52" y="24">10 hrs</text>
   </g>
-  <rect x="110" y="56" width="72" height="144" rx="6" fill="#5A544C"/>
+  <rect x="110" y="56" width="72" height="144" rx="6" fill="url(#estHatch)" stroke="#5A544C" stroke-width="1.5"/>
   <rect x="230" y="110" width="72" height="90" rx="6" fill="#B56E32"/>
   <text x="146" y="46" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="15" font-weight="700" fill="#1C1915">8.0</text>
   <text x="266" y="100" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="15" font-weight="700" fill="#1C1915">5.0</text>
-  <text x="146" y="222" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" fill="#5A544C">Before</text>
-  <text x="266" y="222" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="13" fill="#5A544C">After</text>
-  <rect x="312" y="70" width="98" height="44" rx="8" fill="#F3E4D2" stroke="#B56E32" stroke-width="1.25"/>
+  <text x="146" y="222" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="700" fill="#5A544C">Estimated</text>
+  <text x="146" y="236" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" fill="#5A544C">baseline</text>
+  <text x="266" y="222" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="700" fill="#5A544C">Target</text>
+  <text x="266" y="236" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" fill="#5A544C">after, with review</text>
+  <rect x="312" y="70" width="98" height="52" rx="8" fill="#F3E4D2" stroke="#B56E32" stroke-width="1.25"/>
   <text x="361" y="90" text-anchor="middle" font-family="Newsreader, serif" font-size="16" fill="#8E5520">3.0 hrs</text>
-  <text x="361" y="105" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="10" font-weight="700" fill="#8E5520" letter-spacing="0.06em">RETURNED</text>
+  <text x="361" y="106" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="10" font-weight="700" fill="#8E5520" letter-spacing="0.06em">NET RETURNED</text>
+  <text x="210" y="268" text-anchor="middle" font-family="Source Sans 3, sans-serif" font-size="12" fill="#5A544C">Net hours = 8.0 − 5.0. Review sits in the after time and is counted once.</text>
 </svg></div>
-        <p class="exhibit-source">This 8 hour to 5 hour bundle is a planning illustration, not a timed observation. The 5.9 hour figure from Walton Family Foundation and Gallup, <em>Teaching for Tomorrow</em>, fielded 18 March to 11 April 2025, is a self-reported average among weekly teacher users. It is not a national ceiling, and it is not used here as a forecast of corporate employee savings. <a href="https://news.gallup.com/poll/691967/three-teachers-weekly-saving-six-weeks-year.aspx">Gallup summary</a>.</p>
+        <div class="chart-meta">
+  <span><strong>Cohort.</strong> Weekly users in the trained cohort, target</span>
+  <span><strong>Dates.</strong> Planning model</span>
+  <span><strong>Method.</strong> Net hours = estimated baseline minus after time, with review counted once</span>
+</div>
+        <p class="exhibit-source">An 8.0 to 5.0 hour task bundle used as a planning model. The 5.9 hour figure from Walton Family Foundation and Gallup, <em>Teaching for Tomorrow</em>, fielded 18 March to 11 April 2025, is a self-reported average among weekly teacher users, shown for context. The 3.0 hour figure in this plan is a separate model. <a href="https://news.gallup.com/poll/691967/three-teachers-weekly-saving-six-weeks-year.aspx">Gallup summary</a>.</p>
       </div>
-    </div>
-    <div class="case-block wide">
-      <h2>Illustrative value of staff capacity</h2>
       <div class="exhibit" style="margin-bottom:16px">
-        <div class="exhibit-kicker">Capacity, not cash</div>
-        <h3 class="exhibit-title">About $1.5M in school-year time value <span class="tg">Target</span></h3>
-        <div class="value-grid">
+        
+        <div class="exhibit-kicker">Capacity value of staff time</div>
+        <h3 class="exhibit-title">Annualized value at target and first-year value with a ramp <span class="tg">Target</span></h3>
+        <div class="value-pair">
           <div class="value-hero">
             <div class="value-amount">$1.5M</div>
-            <div class="value-caption">Illustrative value of staff capacity</div>
-            <div class="value-sub">Not cash recovered, and not net ROI.</div>
+            <div class="value-caption">Annualized value at target adoption</div>
+            <div class="value-sub">165 weekly users for a full school year. Target / model.</div>
           </div>
-          <table class="formula">
-            <tr><th>Weekly users at the day-90 target</th><td>165 <span class="tg">Target</span></td></tr>
-            <tr><th>Hours returned per weekly user</th><td>3.0 <span class="tg">Target</span></td></tr>
-            <tr><th>Instructional weeks</th><td>37.4</td></tr>
-            <tr><th>Loaded hourly rate</th><td>$82.13 estimate</td></tr>
-            <tr class="total"><th>School-year value of time</th><td>$1,520,473</td></tr>
-          </table>
+          <div class="value-hero">
+            <div class="value-amount">$1.3M</div>
+            <div class="value-caption">First-year value during the adoption ramp</div>
+            <div class="value-sub">Linear ramp over 13 weeks, then held at target. Target / model.</div>
+          </div>
         </div>
-        <p class="exhibit-source">165 × 3.0 × 37.4 × $82.13 = $1,520,473, shown as about $1.5M. The rate is an estimate (median BCSD 2026-27 MA step, 190 days, 8-hour day, BLS June 2026 teacher benefits load), not a district-approved figure. A true ROI analysis must subtract implementation, license, training, support, review, and other costs. This model does not do that, so it is not called ROI.</p>
+        <table class="formula">
+          <tr><th>Weekly users at the day-90 target</th><td>165 <span class="tg">Target</span></td></tr>
+          <tr><th>Net hours returned per weekly user</th><td>3.0 <span class="tg">Target</span></td></tr>
+          <tr><th>Instructional weeks</th><td>37.4</td></tr>
+          <tr><th>Loaded hourly rate</th><td>$82.13 estimate</td></tr>
+          <tr><th>Annualized value at target</th><td>$1,520,473</td></tr>
+          <tr class="total"><th>First-year value with ramp</th><td>$1,292,254</td></tr>
+        </table>
+        <p class="method-note"><strong>Methodology.</strong> Net hours = 8.0 estimated baseline − 5.0 after time. Human review is already included in the after time and is subtracted once; it is not applied again as a discount on net hours or on dollar value. Annualized value at target adoption = 165 weekly users × 3.0 net hours × 37.4 instructional weeks × $82.13 = $1,520,473 (about $1.5M). First-year value assumes a linear ramp from the 7.5% estimated baseline (22.5 weekly users) to the 55% day-90 target (165 weekly users) over the first 13 instructional weeks, then 165 weekly users held for the remaining 24.4 weeks: 5,244.75 user-weeks × 3.0 × $82.13 = $1,292,254 (about $1.3M). The loaded hourly rate is an estimate based on a median BCSD 2026-27 MA step, 190 days, an 8-hour day, and a BLS June 2026 teacher benefits load. This model values staff time. It is not cash recovered and is not net ROI; implementation, license, training, and support costs sit outside it.</p>
+        <div class="chart-meta">
+  <span><strong>Cohort.</strong> 300 trained staff, target</span>
+  <span><strong>Dates.</strong> One school year, 37.4 instructional weeks</span>
+  <span><strong>Method.</strong> Planning model of staff time value</span>
+</div>
       </div>
       <div class="depts" style="margin-top:8px">
         <div class="dept">
           <h4>HR, policy and onboarding</h4>
           <div class="amt">$154K</div>
-          <p>12 weekly users × 3.0 hours × 52 weeks. Illustrative scenario, not an active pilot.</p>
+          <p>12 weekly users × 3.0 net hours × 52 weeks × $82.13. Annualized illustration at the stated user level.</p>
         </div>
         <div class="dept">
           <h4>Curriculum and Instruction</h4>
           <div class="amt">$192K</div>
-          <p>15 weekly users × 3.0 hours × 52 weeks. Illustrative scenario, not an active pilot.</p>
+          <p>15 weekly users × 3.0 net hours × 52 weeks × $82.13. Annualized illustration at the stated user level.</p>
         </div>
         <div class="dept">
           <h4>Operations and Finance</h4>
           <div class="amt">$107K</div>
-          <p>10 weekly users × 2.5 hours × 52 weeks. Illustrative scenario, not an active pilot.</p>
+          <p>10 weekly users × 2.5 net hours × 52 weeks × $82.13. Annualized illustration at the stated user level.</p>
         </div>
       </div>
-      <p class="exhibit-source" style="margin-top:12px">Exact values are $153,747, $192,184, and $106,769. They are not added to the cohort total, to avoid double counting.</p>
+      <p class="exhibit-source" style="margin-top:12px">Exact values are $153,747, $192,184, and $106,769. They use the same net-hours rule (review counted once) and are not added to the cohort total, to avoid double counting staff who may sit in both groups.</p>
+      <div class="exhibit" style="margin:16px 0">
+        <div class="exhibit-kicker">Training reach</div>
+        <h3 class="exhibit-title">300 staff in the trained cohort, then a video reach ladder <span class="tg">Target</span></h3>
+        <div class="bars">
+          <div class="bar-row"><span class="lab">Day 30 views</span><div class="bar-track"><div class="bar-fill" style="width:25%"></div></div><span class="val">750</span></div>
+          <div class="bar-row"><span class="lab">Day 60 views</span><div class="bar-track"><div class="bar-fill" style="width:45%"></div></div><span class="val">1,350</span></div>
+          <div class="bar-row"><span class="lab">Day 90 views</span><div class="bar-track"><div class="bar-fill" style="width:65%"></div></div><span class="val">1,950</span></div>
+          <div class="bar-row"><span class="lab">Completions</span><div class="bar-track"><div class="bar-fill" style="width:32.5%"></div></div><span class="val">975</span></div>
+          <div class="bar-row"><span class="lab">Replies</span><div class="bar-track"><div class="bar-fill" style="width:6.5%"></div></div><span class="val">195</span></div>
+        </div>
+        <div class="chart-meta">
+  <span><strong>Cohort.</strong> Video reach across a district of about 3,000 employees, target</span>
+  <span><strong>Dates.</strong> Day 30, 60, and 90</span>
+  <span><strong>Method.</strong> Unique views, completions at 50% of day-90 viewers, replies at 20% of completers. Reach is not weekly use.</span>
+</div>
+        <p class="exhibit-source">Attendance goal is about 300 staff. Video unique views of 750, 1,350, and 1,950 are 25%, 45%, and 65% of a roughly 3,000-staff reach ladder.</p>
+      </div>
+      <div class="exhibit">
+        <div class="exhibit-kicker">Quality and satisfaction</div>
+        <h3 class="exhibit-title">What will be measured</h3>
+        <div class="measure-list">
+          <div class="measure-item"><span class="dot">1</span><div><strong style="color:var(--charcoal)">Session pulse.</strong> After each workshop, a short anonymous form on usefulness, clarity, and whether the person tried a real task during the session.</div></div>
+          <div class="measure-item"><span class="dot">2</span><div><strong style="color:var(--charcoal)">Confidence and quality.</strong> Baseline and follow-up items on confidence using an approved tool, plus whether output is reviewed before it is used. Quality means checked work, not speed alone.</div></div>
+          <div class="measure-item"><span class="dot">3</span><div><strong style="color:var(--charcoal)">Support needs.</strong> Office-hour topics, champion flags, and barriers (time, access, policy, trust) collected at 30, 60, and 90 days so the plan can change.</div></div>
+          <div class="measure-item"><span class="dot">4</span><div><strong style="color:var(--charcoal)">Sustained use.</strong> The primary outcome remains weekly active use in the trained cohort, reported with the survey response rate beside the percentage.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-block wide">
+      <h2>Evidence</h2>
+      <p>The charts and formulas above are the working model. A live dashboard will replace the planning figures as measurement begins.</p>
+      <div class="artifact-grid">
+        <figure class="artifact">
+  <div class="artifact-frame" role="img" aria-label="Work sample: measurement dashboard">Work sample: measurement dashboard</div>
+  
+</figure>
+      </div>
     </div>
     <div class="case-block">
-      <h2>Champion model</h2>
-      <p>The network structure already exists in my current work. The headcount below is a coverage target, not a roster I can publish today. The operating model is proposed:</p>
-      <ul>
-        <li><strong>Selection.</strong> Practitioners who already use an approved tool and can coach peers, chosen for coverage across sites and functions. Target: 24 by day 90 (8% of 300), stretch 30 (10%).</li>
-        <li><strong>Responsibilities.</strong> Model one useful workflow, support colleagues, log barriers, and escalate policy or data questions.</li>
-        <li><strong>Support.</strong> Playbooks, the role-based video series, and office hours.</li>
-        <li><strong>Feedback.</strong> Short check-ins at 30, 60, and 90 days, plus pulse surveys of the wider cohort.</li>
-        <li><strong>Escalation.</strong> Privacy, student-data, or tool-approval issues go to the appropriate district or IT channel. The enablement lead does not assume formal authority over other departments.</li>
-      </ul>
-    </div>
-    <div class="case-block">
-      <h2>A planned workflow, named clearly</h2>
-      <p>If a first timed workflow is approved, the intended task is staff policy and procedure lookup: finding the right policy or procedure in existing documents, with citations and required human review. That project is planned. It has not been built, and no before-and-after times are presented as measurements.</p>
-    </div>
-    <div class="case-block">
-      <h2>Governance, labeled as proposed</h2>
-      <p>What is already true in my current role is collaboration on adoption methodology in a regulated environment, and evaluation of tools for fit, risk, and responsible use. The following are proposed practices I would put in place with a new organization, not a claim that I have already implemented enterprise governance:</p>
-      <ul>
-        <li>A short list of approved tools, with a clear path to request something new.</li>
-        <li>Data-handling rules that keep personal and regulated information out of unapproved systems.</li>
-        <li>Human review before AI output is used in a decision or an external document.</li>
-        <li>A simple quality check (source, accuracy, tone) built into the workflow, not added later.</li>
-        <li>A named escalation path for privacy, legal, or technical issues.</li>
-      </ul>
-    </div>
-    <div class="case-block">
-      <h2>Other applied builds, kept separate</h2>
-      <p>FieldSense, the AI sorter, and Bandit are applied edge and robotics builds. They are listed on the homepage under More builds. They are not 90-day adoption deliverables, and they are not treated as measured results in this plan.</p>
+      <h2>Next steps</h2>
+      <p>Take a pre-session baseline, stand up the champion group, time the first department workflow, and report weekly use, hours, reach, and coverage at 30, 60, and 90 days.</p>
     </div>
   </div>
 </section>

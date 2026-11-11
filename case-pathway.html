@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>/* Concept B v7. Public, evidence-first. No em dashes in any copy. */
+<style>/* Concept B v8. Public portfolio. No em dashes in any copy. */
 :root {
   --charcoal: #1C1915;
   --charcoal-800: #2C2823;
@@ -612,6 +612,142 @@ label.menu-toggle { display: none; }
 @media (max-width: 700px) {
   .more-grid { grid-template-columns: 1fr; }
 }
+
+
+/* v8: artifact slots, dual value figures, chart meta */
+.artifact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0 8px;
+  max-width: 760px;
+}
+.case-block.wide .artifact-grid { max-width: 1120px; }
+.artifact { margin: 0; }
+.artifact-frame {
+  aspect-ratio: 16 / 10;
+  border: 1.5px dashed var(--copper-line);
+  border-radius: 14px;
+  background:
+    repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(181, 110, 50, 0.045) 10px, rgba(181, 110, 50, 0.045) 20px),
+    var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 24px;
+  color: var(--copper-dark);
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  min-height: 140px;
+}
+.artifact figcaption {
+  font-size: 13px;
+  color: var(--stone-600);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.value-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.value-pair .value-hero {
+  background: var(--ivory);
+  border: 1px solid var(--stone-200);
+  border-radius: 12px;
+  padding: 16px 18px 18px;
+}
+.value-pair .value-amount { font-size: 48px; }
+.value-pair .value-caption { margin-top: 6px; }
+
+.chart-meta {
+  font-size: 12.5px;
+  color: var(--stone-600);
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+.chart-meta strong { color: var(--charcoal); font-weight: 700; }
+
+.method-note {
+  font-size: 13px;
+  color: var(--stone-600);
+  line-height: 1.5;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--stone-200);
+}
+.method-note strong { color: var(--charcoal); font-weight: 700; }
+
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  font-size: 12.5px;
+  color: var(--stone-600);
+  margin-top: 8px;
+  align-items: center;
+}
+.legend-row .swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-row i {
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.legend-row i.solid { background: var(--copper); }
+.legend-row i.dashed {
+  background: repeating-linear-gradient(90deg, var(--copper) 0 8px, transparent 8px 12px);
+  box-shadow: inset 0 0 0 1px transparent;
+  height: 3px;
+  width: 22px;
+  border-radius: 0;
+}
+.legend-row i.hollow {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1.75px solid var(--stone-600);
+}
+.legend-row i.hatch {
+  width: 16px;
+  height: 10px;
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(-45deg, #5A544C 0 2px, transparent 2px 5px),
+    var(--stone-100);
+  border: 1px solid var(--stone-600);
+}
+
+@media (max-width: 700px) {
+  .artifact-grid, .value-pair { grid-template-columns: 1fr; }
+  .value-pair .value-amount { font-size: 42px; }
+  .artifact-frame { min-height: 120px; }
+}
+
+/* v8 polish */
+section[id], .case-hero { scroll-margin-top: 72px; }
+.artifact-grid.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 700px) {
+  .artifact-grid.three { grid-template-columns: 1fr; }
+  .chart-callout { display: none; }
+  .arch { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .arch svg { min-width: 860px; height: auto; }
+}
 </style>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
@@ -649,47 +785,56 @@ label.menu-toggle { display: none; }
 <main id="main">
 <section class="case-hero">
   <div class="wrap">
-    <a class="back" href="index.html#work"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to work</a>
-    <div class="kicker">Case study · In design</div>
+    <a class="back" href="index.html#work"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to work</a>
+    <div class="kicker">Case study · In design for 2027-28</div>
     <h1>An Applied AI pathway, from introduction to applied work</h1>
-    <p class="lede">I am designing a build-first Applied AI sequence so people can move from an introductory course into applied projects and credentials. It is proposed around the 2027 to 2028 school year. It is not yet an approved official program.</p>
+    <p class="lede">I am designing a build-first Applied AI sequence so learners move from an introductory course into applied projects and credentials. In design for 2027 to 2028.</p>
     <div class="case-meta">
-      <span><strong>Role.</strong> AI Integration Lead and pathway design</span>
+      <span><strong>Role.</strong> AI Lead and pathway design</span>
       <span><strong>Setting.</strong> Beaufort County School District and the South Carolina AI pilot</span>
-      <span><strong>Status.</strong> In design, not an approved program</span>
+      <span><strong>Status.</strong> In design for 2027-28</span>
     </div>
   </div>
 </section>
 <section class="case-body">
   <div class="wrap">
     <div class="case-block">
-      <h2>The problem and the users</h2>
+      <h2>Problem</h2>
       <p>An introduction to AI course can leave people short of the skills they need to do applied work. I want a sequence that is build-first: learners move from an introduction into projects in areas such as computer vision, robotics, and applied analysis, with a path toward industry-recognized credentials. The immediate setting is a high school and district career pathway. The transferable idea is a staged learning pathway that takes a workforce from awareness to useful practice.</p>
     </div>
     <div class="case-block">
-      <h2>What I owned, and the decisions I made</h2>
-      <p>I teach South Carolina’s Introduction to AI and Project Lead The Way Computer Science Essentials at Bluffton High School, in two daily 90-minute blocks, with applied projects in agriculture, manufacturing and computer vision, sports analytics, robotics, and certification prep. I am using that classroom and my role as South Carolina AI pilot lead to design a more applied sequence that can sit alongside, rather than automatically replace, a more theoretical existing AI curriculum.</p>
-      <p>I have discussed a more applied path with partners in the Southern Regional Education Board and at the University of Florida. Those conversations are potential collaboration, not a signed pathway agreement and not program authorization.</p>
+      <h2>My responsibility</h2>
+      <p>I teach South Carolina’s Introduction to AI and Project Lead The Way Computer Science Essentials at Bluffton High School, in two daily 90-minute blocks, with applied projects in agriculture, manufacturing and computer vision, sports analytics, robotics, and certification prep. I am using that classroom and my role as South Carolina AI pilot lead to design a more applied sequence that can sit alongside a more theoretical existing AI curriculum.</p>
+      <p>I have discussed a more applied path with partners at the Southern Regional Education Board and the University of Florida.</p>
     </div>
     <div class="case-block">
-      <h2>What exists today</h2>
+      <h2>What I delivered</h2>
       <ul>
         <li>The introductory course and applied project work already running in my classes.</li>
         <li>A district showcase in October 2026 that included student interviews and a teacher interview to spotlight the AI pathway.</li>
-        <li>A written proposal for a scalable Applied AI CTE pathway around 2027 to 2028.</li>
+        <li>A written design for a scalable Applied AI CTE pathway for 2027 to 2028.</li>
       </ul>
-      <p>Formal course codes, state approvals, CIP pathway designations, credential alignments, and graduation-policy changes have not been verified as approved, and are not claimed here.</p>
     </div>
     <div class="case-block">
-      <h2>Current status</h2>
-      <p>The pathway is in design. It is a proposal, not an approved district or state program. No enrollment figures, completion rates, or credential counts are presented, because those results do not exist yet.</p>
+      <h2>Results</h2>
+      <p>The pathway is in design for 2027 to 2028. The introductory course and applied projects are already running, and the October 2026 showcase put the pathway in front of a district audience.</p>
     </div>
-    <div class="case-block">
-      <h2>Limitations and next steps</h2>
-      <p>The transferable business capability is pathway design: a staged sequence, role-relevant practice, and credentials that employers can recognize. Until approvals and a first cohort exist, a hiring manager should treat this as program design, not a launched transformation.</p>
-      <div class="missing">
-        <strong>Still needed.</strong> A one-page sequence of proposed courses or modules; which credentials are intended, if any can be named; what, if anything, was formally presented at the October 2026 showcase; and the current status of any request to district or state authorities.
+    <div class="case-block wide">
+      <h2>Evidence</h2>
+      <div class="artifact-grid">
+        <figure class="artifact">
+  <div class="artifact-frame" role="img" aria-label="Work sample: pathway sequence">Work sample: pathway sequence</div>
+  
+</figure>
+        <figure class="artifact">
+  <div class="artifact-frame" role="img" aria-label="Work sample: October 2026 showcase materials">Work sample: October 2026 showcase materials</div>
+  
+</figure>
       </div>
+    </div>
+    <div class="case-block">
+      <h2>Next steps</h2>
+      <p>Publish a one-page course and module sequence, name intended credentials, and advance district and state approvals for a first cohort.</p>
     </div>
   </div>
 </section>

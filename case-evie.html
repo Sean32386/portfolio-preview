@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>/* Concept B v7. Public, evidence-first. No em dashes in any copy. */
+<style>/* Concept B v8. Public portfolio. No em dashes in any copy. */
 :root {
   --charcoal: #1C1915;
   --charcoal-800: #2C2823;
@@ -612,6 +612,142 @@ label.menu-toggle { display: none; }
 @media (max-width: 700px) {
   .more-grid { grid-template-columns: 1fr; }
 }
+
+
+/* v8: artifact slots, dual value figures, chart meta */
+.artifact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0 8px;
+  max-width: 760px;
+}
+.case-block.wide .artifact-grid { max-width: 1120px; }
+.artifact { margin: 0; }
+.artifact-frame {
+  aspect-ratio: 16 / 10;
+  border: 1.5px dashed var(--copper-line);
+  border-radius: 14px;
+  background:
+    repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(181, 110, 50, 0.045) 10px, rgba(181, 110, 50, 0.045) 20px),
+    var(--ivory);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 24px;
+  color: var(--copper-dark);
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  min-height: 140px;
+}
+.artifact figcaption {
+  font-size: 13px;
+  color: var(--stone-600);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.value-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+.value-pair .value-hero {
+  background: var(--ivory);
+  border: 1px solid var(--stone-200);
+  border-radius: 12px;
+  padding: 16px 18px 18px;
+}
+.value-pair .value-amount { font-size: 48px; }
+.value-pair .value-caption { margin-top: 6px; }
+
+.chart-meta {
+  font-size: 12.5px;
+  color: var(--stone-600);
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+.chart-meta strong { color: var(--charcoal); font-weight: 700; }
+
+.method-note {
+  font-size: 13px;
+  color: var(--stone-600);
+  line-height: 1.5;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--stone-200);
+}
+.method-note strong { color: var(--charcoal); font-weight: 700; }
+
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  font-size: 12.5px;
+  color: var(--stone-600);
+  margin-top: 8px;
+  align-items: center;
+}
+.legend-row .swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.legend-row i {
+  display: inline-block;
+  width: 18px;
+  height: 10px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.legend-row i.solid { background: var(--copper); }
+.legend-row i.dashed {
+  background: repeating-linear-gradient(90deg, var(--copper) 0 8px, transparent 8px 12px);
+  box-shadow: inset 0 0 0 1px transparent;
+  height: 3px;
+  width: 22px;
+  border-radius: 0;
+}
+.legend-row i.hollow {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1.75px solid var(--stone-600);
+}
+.legend-row i.hatch {
+  width: 16px;
+  height: 10px;
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(-45deg, #5A544C 0 2px, transparent 2px 5px),
+    var(--stone-100);
+  border: 1px solid var(--stone-600);
+}
+
+@media (max-width: 700px) {
+  .artifact-grid, .value-pair { grid-template-columns: 1fr; }
+  .value-pair .value-amount { font-size: 42px; }
+  .artifact-frame { min-height: 120px; }
+}
+
+/* v8 polish */
+section[id], .case-hero { scroll-margin-top: 72px; }
+.artifact-grid.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 700px) {
+  .artifact-grid.three { grid-template-columns: 1fr; }
+  .chart-callout { display: none; }
+  .arch { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .arch svg { min-width: 860px; height: auto; }
+}
 </style>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
@@ -649,12 +785,12 @@ label.menu-toggle { display: none; }
 <main id="main">
 <section class="case-hero">
   <div class="wrap">
-    <a class="back" href="index.html#work"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to work</a>
+    <a class="back" href="index.html#work"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to work</a>
     <div class="kicker">Case study · In active use</div>
     <h1>EVIE, an on-premise local LLM and classroom assistant</h1>
     <p class="lede">An on-premise, custom-built, in-house local LLM and classroom assistant. It is complete and in active use. I continue to add updates and iterations so a class can get in-room help without sending classroom audio to a cloud model.</p>
     <div class="case-meta">
-      <span><strong>Role.</strong> Designer and builder; I am not a software engineer by title</span>
+      <span><strong>Role.</strong> Designer and builder</span>
       <span><strong>Users.</strong> In-room classroom support</span>
       <span><strong>Status.</strong> Complete, in active use, with ongoing updates. 2025 to present</span>
       <span><strong>Stack.</strong> Ollama, Qwen 2.5 32B, local speech pipeline</span>
@@ -664,20 +800,20 @@ label.menu-toggle { display: none; }
 <section class="case-body">
   <div class="wrap">
     <div class="case-block">
-      <h2>The problem and the users</h2>
+      <h2>Problem</h2>
       <p>High school AI class sessions need a voice assistant that can answer in the room. Sending classroom audio or student questions to a cloud model is the wrong default in that setting. EVIE, the Educational Virtual Intelligence Engine, is a single always-on rig: wake word, local speech to text, a local language model with a custom personality, spoken replies, a classroom display, and lighting that shows state.</p>
     </div>
     <div class="case-block">
-      <h2>What I owned, and the decisions I made</h2>
-      <p>I designed and built the system as a custom in-house assistant, chose a fully local inference path, and I continue to add updates and iterations using Claude Code and GitHub. The important decisions were to keep audio and generation on the machine, to use a custom model file for personality and topic-redirection rules, and to accept a simpler local retriever instead of a hosted vector database. Those choices favor privacy and a system I can operate and improve in a classroom, rather than a multi-tenant product.</p>
+      <h2>My responsibility</h2>
+      <p>I designed and built the system as a custom in-house assistant, chose a fully local inference path, and I continue to ship updates and iterations using Claude Code and GitHub. The important decisions were to keep audio and generation on the machine, to use a custom personality model with topic-redirection rules, and to use a local retriever rather than a hosted vector database. Those choices favor privacy and a system I can operate and improve in a classroom.</p>
     </div>
     <div class="case-block wide">
-      <h2>What was built, and how it works</h2>
-      <p>The documented pipeline is orchestrated by a listener script. After a wake word or a hotkey, audio is recorded until a silence gate, transcribed, and routed to teacher-assist phrases, memory commands, a local joke file, or a general query. The general path may attach retrieved local notes. Ollama generates a reply. A local text-to-speech service speaks it. The display and lights follow listening, thinking, and speaking states. Memory and daily transcripts are stored in two separate local SQLite databases.</p>
-      <div class="arch"><svg viewBox="0 0 1040 380" width="100%" role="img" aria-labelledby="archTitle archDesc">
-  <title id="archTitle">EVIE architecture. Documented voice pipeline on a classroom workstation, with curriculum ingestion marked as not confirmed.</title>
-  <desc id="archDesc">Hardware on the left: microphone, speaker, classroom display, Nanoleaf lights, and a local workstation. Software flow: wake word, speech to text, router, optional retrieval, local Ollama model, and text to speech. Curriculum PDFs are marked uncertain. Vision cameras are marked not built.</desc>
-  <rect x="8" y="8" width="1024" height="364" rx="16" fill="#FFFCF8" stroke="#E4DDD4"/>
+      <h2>What I delivered</h2>
+      <p>The documented pipeline is orchestrated by a listener script. After a wake word or a hotkey, audio is recorded until a silence gate, transcribed, and routed to teacher-assist phrases, memory commands, a local joke bank, or a general query. The general path may attach retrieved local notes. Ollama generates a reply. A local text-to-speech service speaks it. The display and lights follow listening, thinking, and speaking states. Memory and daily transcripts are stored in two separate local SQLite databases.</p>
+      <div class="arch"><svg viewBox="0 0 1040 430" width="100%" role="img" aria-labelledby="archTitle archDesc">
+  <title id="archTitle">EVIE architecture. Voice pipeline on a classroom workstation, with expansion paths marked for camera vision and a larger curriculum corpus.</title>
+  <desc id="archDesc">Hardware on the left: microphone, speaker, classroom display, Nanoleaf lights, and a local workstation. Software flow: wake word, speech to text, router, optional retrieval, local Ollama model, and text to speech. Camera vision and a larger curriculum corpus are marked as next build or expansion.</desc>
+  <rect x="8" y="8" width="1024" height="414" rx="16" fill="#FFFCF8" stroke="#E4DDD4"/>
   <text x="28" y="36" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="700" fill="#8E5520" letter-spacing="0.12em">HARDWARE</text>
   <g font-family="Source Sans 3, sans-serif" font-size="13" font-weight="600" fill="#1C1915">
     <rect x="28" y="52" width="150" height="44" rx="8" fill="#F7F3EC" stroke="#E4DDD4"/>
@@ -691,9 +827,9 @@ label.menu-toggle { display: none; }
     <rect x="28" y="276" width="150" height="56" rx="8" fill="#F7F3EC" stroke="#E4DDD4"/>
     <text x="103" y="298" text-anchor="middle">Workstation</text>
     <text x="103" y="316" text-anchor="middle" font-size="11" font-weight="500" fill="#5A544C">RTX 5090, local</text>
-    <rect x="28" y="348" width="150" height="44" rx="8" fill="#FFFCF8" stroke="#C4A574" stroke-dasharray="5 4"/>
-    <text x="103" y="368" text-anchor="middle" fill="#8E5520">OAK cameras</text>
-    <text x="103" y="383" text-anchor="middle" font-size="11" font-weight="500" fill="#8E5520">Not built</text>
+    <rect x="28" y="344" width="150" height="44" rx="8" fill="#FFFCF8" stroke="#C4A574" stroke-dasharray="5 4"/>
+    <text x="103" y="362" text-anchor="middle" fill="#8E5520">OAK cameras</text>
+    <text x="103" y="378" text-anchor="middle" font-size="11" font-weight="500" fill="#8E5520">Next build</text>
   </g>
   <text x="220" y="36" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="700" fill="#8E5520" letter-spacing="0.12em">DOCUMENTED PIPELINE</text>
   <g font-family="Source Sans 3, sans-serif" font-size="13" font-weight="600" fill="#1C1915">
@@ -726,7 +862,7 @@ label.menu-toggle { display: none; }
     <rect x="384" y="176" width="150" height="40" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
     <text x="459" y="201" text-anchor="middle">Memory commands</text>
     <rect x="548" y="176" width="150" height="40" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
-    <text x="623" y="201" text-anchor="middle">Local joke file</text>
+    <text x="623" y="201" text-anchor="middle">Local joke bank</text>
     <rect x="712" y="176" width="110" height="40" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
     <text x="767" y="201" text-anchor="middle">General query</text>
     <rect x="220" y="240" width="200" height="52" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
@@ -736,49 +872,49 @@ label.menu-toggle { display: none; }
     <text x="550" y="262" text-anchor="middle">Retriever, on CPU</text>
     <text x="550" y="280" text-anchor="middle" font-size="11" font-weight="500" fill="#5A544C">all-MiniLM-L6-v2 cosine</text>
     <rect x="680" y="240" width="200" height="52" rx="8" fill="#FFFCF8" stroke="#C4A574" stroke-dasharray="5 4"/>
-    <text x="780" y="262" text-anchor="middle" fill="#8E5520">Curriculum PDFs</text>
-    <text x="780" y="280" text-anchor="middle" font-size="11" font-weight="500" fill="#8E5520">Uncertain, not ingested Aug 2026</text>
+    <text x="780" y="262" text-anchor="middle" fill="#8E5520">Curriculum corpus</text>
+    <text x="780" y="280" text-anchor="middle" font-size="11" font-weight="500" fill="#8E5520">Expansion path</text>
   </g>
   <g font-family="Source Sans 3, sans-serif" font-size="12" fill="#5A544C">
-    <rect x="220" y="332" width="14" height="14" rx="3" fill="#FFFCF8" stroke="#E4DDD4"/>
-    <text x="240" y="343">Documented</text>
-    <rect x="360" y="332" width="14" height="14" rx="3" fill="#FFFCF8" stroke="#C4A574" stroke-dasharray="4 3"/>
-    <text x="380" y="343">Uncertain or not built</text>
-    <text x="560" y="343">Lights: green listening, purple thinking, cyan speaking.</text>
+    <rect x="220" y="396" width="14" height="14" rx="3" fill="#FFFCF8" stroke="#E4DDD4"/>
+    <text x="240" y="407">In the current system</text>
+    <rect x="430" y="396" width="14" height="14" rx="3" fill="#FFFCF8" stroke="#C4A574" stroke-dasharray="4 3"/>
+    <text x="450" y="407">Next build or expansion</text>
+    <text x="680" y="407">Lights: green listening, purple thinking, cyan speaking.</text>
   </g>
 </svg></div>
-      <p>Lights show green when listening, purple when thinking, and cyan when speaking. Display size is uncertain. RAM is listed as 64GB in project docs and still needs physical confirmation. The documented default for speech to text is openai-whisper; a faster-whisper option also exists. Safety rules live in the model system prompt, not in a separate filter. That is a design choice, not a certification.</p>
+      <p>Lights show green when listening, purple when thinking, and cyan when speaking. Safety rules live in the model system prompt, keeping the stack fully on-premise. The documented default for speech to text is openai-whisper; a faster-whisper option also exists.</p>
       <div class="split">
         <div class="panel">
-          <h3>Implemented, as documented</h3>
-          <p>Wake word (custom openWakeWord model, with a transcription fallback), speech to text, local Ollama model (customized Qwen 2.5 32B), local text to speech, classroom GUI, Nanoleaf state lighting, SQLite memory and sessions, and a CPU retriever over local text files.</p>
+          <h3>In the current system</h3>
+          <p>Wake word (custom openWakeWord model, with a transcription fallback), speech to text, local Ollama model (customized Qwen 2.5 32B), local text to speech, classroom GUI, Nanoleaf state lighting, SQLite memory and sessions, and a CPU retriever over local text.</p>
         </div>
         <div class="panel">
-          <h3>Not shown as built</h3>
-          <p>OAK camera vision, bilingual tutoring, measured learning outcomes, and a productized GraphRAG layer. As of an August 10, 2026 project note, curriculum PDFs had not been ingested (zero PDF chunks). Which speech-to-text engine is running now, installed RAM, and exact display size still need confirmation.</p>
+          <h3>Next build and expansion</h3>
+          <p>OAK camera vision, bilingual tutoring, and a larger curriculum corpus.</p>
         </div>
       </div>
     </div>
     <div class="case-block">
-      <h2>Current status and actual usage</h2>
-      <p>EVIE is complete and in active use as the classroom assistant I built, with constant updates and iterations. The core in-room loop (wake word, speech to text, local language model, spoken replies, display, and lights) is the system in use. Features that are still being added, including camera vision, bilingual tutoring, and a fuller curriculum corpus, are listed separately and are not claimed as part of current use.</p>
+      <h2>Results</h2>
+      <p>EVIE is complete and in active use as the classroom assistant I built. The in-room loop (wake word, speech to text, local language model, spoken replies, display, and lights) is live and continually updated.</p>
     </div>
-    <div class="case-block">
-      <h2>Results and evaluation</h2>
-      <p>There is no published evaluation with a fixed test set, no end-to-end latency log, and no accuracy or concurrent-user results on this page. A wake-word F1 figure appears in project notes, but the test-set size, date, and false-accept rate were not attached in the files reviewed, so that number is omitted. Earlier resume language about sub-3-second latency is also omitted until it can be remeasured.</p>
-      <div class="missing">
-        <strong>Still needed.</strong> A redacted screenshot or short demo, with no student audio or names; a timed wake-to-speech sample on several turns; confirmation of current runtime, RAM, display, and speech-to-text engine; whether any curriculum PDFs have been ingested since August 2026; and hardware cost if it should appear in this case study.
+    <div class="case-block wide">
+      <h2>Evidence</h2>
+      <div class="artifact-grid">
+        <figure class="artifact">
+  <div class="artifact-frame" role="img" aria-label="Screenshot: EVIE interface">Screenshot: EVIE interface</div>
+  
+</figure>
+        <figure class="artifact">
+  <div class="artifact-frame" role="img" aria-label="Demo video">Demo video</div>
+  
+</figure>
       </div>
     </div>
     <div class="case-block">
-      <h2>Limitations and next steps</h2>
-      <ul>
-        <li>This is one classroom machine, not a multi-tenant product. There is no staging and production split, which fits a custom in-house system.</li>
-        <li>Safety rules live in the model system prompt, not in a separate software filter. That is a design choice, not a COPPA or FERPA certification.</li>
-        <li>Known issues documented by me include a stuck thinking state after reboot and driver errors after an unclean shutdown.</li>
-        <li>The public write-up can describe architecture. It cannot ship a runnable repository, because model weights, databases, and the live environment stay on the classroom machine.</li>
-      </ul>
-      <p>The highest-value next step is a short, repeatable evaluation: fixed prompts, timed turns, and a reboot test. That would make active use inspectable without turning the story into software-engineering employment.</p>
+      <h2>Next steps</h2>
+      <p>Expand the curriculum corpus, add camera vision and bilingual tutoring, and run a short, repeatable evaluation with fixed prompts and timed turns.</p>
     </div>
   </div>
 </section>
