@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EVIE classroom assistant | Sean W. Seder, Ed.D.</title>
-<meta name="description" content="Case study of EVIE, an on-premise custom-built local LLM and classroom assistant, designed by Sean W. Seder, Ed.D. and in active use.">
+<meta name="description" content="Case study of EVIE, an on-premise classroom assistant built by Sean W. Seder, Ed.D. Complete, in active use, and continually updated.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -72,7 +72,7 @@ h1, h2, h3, h4, .serif {
   padding-right: var(--pad);
 }
 
-/* Target tag: small, tasteful, for unverified figures only */
+/* Small tag style for figure labels */
 .tg, .tag-target {
   display: inline-flex; align-items: center; justify-content: center;
   height: 18px; padding: 0 7px; border-radius: 100px;
@@ -788,11 +788,11 @@ section[id], .case-hero { scroll-margin-top: 72px; }
     <a class="back" href="index.html#work"><svg viewBox="0 0 14 14" width="14" height="14" fill="none" aria-hidden="true"><path d="M11 7H3M7 3L3 7l4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to work</a>
     <div class="kicker">Case study · In active use</div>
     <h1>EVIE, an on-premise local LLM and classroom assistant</h1>
-    <p class="lede">An on-premise, custom-built, in-house local LLM and classroom assistant. It is complete and in active use. I continue to add updates and iterations so a class can get in-room help without sending classroom audio to a cloud model.</p>
+    <p class="lede">An on-premise, custom-built, in-house local LLM and classroom assistant. It is complete, in active use, and continually updated, so a class can get in-room help without sending classroom audio to a cloud model.</p>
     <div class="case-meta">
       <span><strong>Role.</strong> Designer and builder</span>
       <span><strong>Users.</strong> In-room classroom support</span>
-      <span><strong>Status.</strong> Complete, in active use, with ongoing updates. 2025 to present</span>
+      <span><strong>Status.</strong> Complete, in active use, and continually updated. 2025 to present</span>
       <span><strong>Stack.</strong> Ollama, Qwen 2.5 32B, local speech pipeline</span>
     </div>
   </div>
@@ -800,16 +800,13 @@ section[id], .case-hero { scroll-margin-top: 72px; }
 <section class="case-body">
   <div class="wrap">
     <div class="case-block">
-      <h2>Problem</h2>
+      <h2>Challenge</h2>
       <p>High school AI class sessions need a voice assistant that can answer in the room. Sending classroom audio or student questions to a cloud model is the wrong default in that setting. EVIE, the Educational Virtual Intelligence Engine, is a single always-on rig: wake word, local speech to text, a local language model with a custom personality, spoken replies, a classroom display, and lighting that shows state.</p>
     </div>
-    <div class="case-block">
-      <h2>My responsibility</h2>
-      <p>I designed and built the system as a custom in-house assistant, chose a fully local inference path, and I continue to ship updates and iterations using Claude Code and GitHub. The important decisions were to keep audio and generation on the machine, to use a custom personality model with topic-redirection rules, and to use a local retriever rather than a hosted vector database. Those choices favor privacy and a system I can operate and improve in a classroom.</p>
-    </div>
     <div class="case-block wide">
-      <h2>What I delivered</h2>
-      <p>The documented pipeline is orchestrated by a listener script. After a wake word or a hotkey, audio is recorded until a silence gate, transcribed, and routed to teacher-assist phrases, memory commands, a local joke bank, or a general query. The general path may attach retrieved local notes. Ollama generates a reply. A local text-to-speech service speaks it. The display and lights follow listening, thinking, and speaking states. Memory and daily transcripts are stored in two separate local SQLite databases.</p>
+      <h2>Approach</h2>
+      <p>I designed and built the system as a custom in-house assistant, chose a fully local inference path, and I continually update it using Claude Code and GitHub. The important decisions were to keep audio and generation on the machine, to use a custom personality model with topic-redirection rules, and to use a local retriever rather than a hosted vector database. Those choices favor privacy and a system I can operate and improve in a classroom.</p>
+      <p>The documented pipeline is orchestrated by a listener script. After a wake word or a hotkey, audio is recorded until a silence gate, transcribed, and routed to educator-assist phrases, memory commands, a local joke bank, or a general query. The general path may attach retrieved local notes. Ollama generates a reply. A local text-to-speech service speaks it. The display and lights follow listening, thinking, and speaking states. Memory and daily transcripts are stored in two separate local SQLite databases.</p>
       <div class="arch"><svg viewBox="0 0 1040 430" width="100%" role="img" aria-labelledby="archTitle archDesc">
   <title id="archTitle">EVIE architecture. Voice pipeline on a classroom workstation, with expansion paths marked for camera vision and a larger curriculum corpus.</title>
   <desc id="archDesc">Hardware on the left: microphone, speaker, classroom display, Nanoleaf lights, and a local workstation. Software flow: wake word, speech to text, router, optional retrieval, local Ollama model, and text to speech. Camera vision and a larger curriculum corpus are marked as next build or expansion.</desc>
@@ -858,7 +855,7 @@ section[id], .case-hero { scroll-margin-top: 72px; }
   <text x="220" y="160" font-family="Source Sans 3, sans-serif" font-size="12" font-weight="700" fill="#8E5520" letter-spacing="0.12em">ROUTER PATHS AND MEMORY</text>
   <g font-family="Source Sans 3, sans-serif" font-size="13" font-weight="600" fill="#1C1915">
     <rect x="220" y="176" width="150" height="40" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
-    <text x="295" y="201" text-anchor="middle">Teacher assist</text>
+    <text x="295" y="201" text-anchor="middle">Educator assist</text>
     <rect x="384" y="176" width="150" height="40" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
     <text x="459" y="201" text-anchor="middle">Memory commands</text>
     <rect x="548" y="176" width="150" height="40" rx="8" fill="#FFFCF8" stroke="#E4DDD4"/>
@@ -890,31 +887,20 @@ section[id], .case-hero { scroll-margin-top: 72px; }
           <p>Wake word (custom openWakeWord model, with a transcription fallback), speech to text, local Ollama model (customized Qwen 2.5 32B), local text to speech, classroom GUI, Nanoleaf state lighting, SQLite memory and sessions, and a CPU retriever over local text.</p>
         </div>
         <div class="panel">
-          <h3>Next build and expansion</h3>
-          <p>OAK camera vision, bilingual tutoring, and a larger curriculum corpus.</p>
+          <h3>Continued updates</h3>
+          <p>OAK camera vision, bilingual tutoring, and a larger curriculum corpus. The voice loop already in the room stays complete and in active use while these updates continue.</p>
         </div>
       </div>
     </div>
     <div class="case-block">
-      <h2>Results</h2>
-      <p>EVIE is complete and in active use as the classroom assistant I built. The in-room loop (wake word, speech to text, local language model, spoken replies, display, and lights) is live and continually updated.</p>
+      <h2>Outcome</h2>
+      <p>EVIE is complete, in active use, and continually updated. The in-room loop (wake word, speech to text, local language model, spoken replies, display, and lights) is live.</p>
+      <!-- TODO(Doc): add real figure for time in active classroom use, and any measured latency or accuracy from a fixed prompt set -->
     </div>
     <div class="case-block wide">
       <h2>Evidence</h2>
-      <div class="artifact-grid">
-        <figure class="artifact">
-  <div class="artifact-frame" role="img" aria-label="Screenshot: EVIE interface">Screenshot: EVIE interface</div>
-  
-</figure>
-        <figure class="artifact">
-  <div class="artifact-frame" role="img" aria-label="Demo video">Demo video</div>
-  
-</figure>
-      </div>
-    </div>
-    <div class="case-block">
-      <h2>Next steps</h2>
-      <p>Expand the curriculum corpus, add camera vision and bilingual tutoring, and run a short, repeatable evaluation with fixed prompts and timed turns.</p>
+      <p>The architecture above is the system in active use: local wake word, speech to text, Ollama on Qwen 2.5 32B, local text to speech, the classroom display, and state lighting.</p>
+      <!-- TODO(Doc): add a screenshot of the EVIE interface and a video of the live voice loop -->
     </div>
   </div>
 </section>
