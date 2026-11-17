@@ -61,7 +61,7 @@ h1, h2, h3, h4, .serif {
   padding-right: var(--pad);
 }
 
-/* Target tag: small, tasteful, for unverified figures only */
+/* Small tag style for figure labels */
 .tg, .tag-target {
   display: inline-flex; align-items: center; justify-content: center;
   height: 18px; padding: 0 7px; border-radius: 100px;
